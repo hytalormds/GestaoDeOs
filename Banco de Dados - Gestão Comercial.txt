@@ -1,0 +1,33 @@
+CREATE DATABASE dbinfox;
+
+USE dbinfox;
+
+CREATE TABLE Usuarios(
+    id INT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    fone VARCHAR(15),
+    login VARCHAR(15) NOT NULL UNIQUE,
+    senha VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE Clientes(
+	id INT PRIMARY KEY AUTO INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	endereço VARCHAR(100),
+	fone VARCHAR(50) NOT NULL,
+	email VARCHAR(50)
+);
+
+CREATE TABLE Os(
+	os INT PRIMARY KEY AUTO INCREMENT,
+	data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	equipamento VARCHAR(150) NOT NULL,
+	defeito VARCHAR(150) NOT NULL,
+	serviço VARCHAR(150),
+	tecnico VARCHAR(30),
+	valor DECIMAL(10,2),
+	idCliente INT NOT NULL,
+	FOREIGN KEY(idClientes) REFERENCES Clientes(id)
+);
+	
+	
