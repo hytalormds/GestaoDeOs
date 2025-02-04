@@ -8,6 +8,8 @@ O sistema foi desenvolvido para uma prestadora de serviços de manutenção de e
 
 ### Tela Inicial
 - Tela de login para autenticação do usuário.
+  
+*OBS:* **O código do Banco de Dados já vem com um usuário padrão já cadastrado, sendo seu login: admin e senha: admin123**
 
 ### Tela Principal
 - Contém um menu superior com guias para acesso às funcionalidades principais.
