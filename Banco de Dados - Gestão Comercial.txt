@@ -7,8 +7,13 @@ CREATE TABLE Usuarios(
     nome VARCHAR(50) NOT NULL,
     fone VARCHAR(15),
     login VARCHAR(15) NOT NULL UNIQUE,
-    senha VARCHAR(15) NOT NULL
+    senha VARCHAR(15) NOT NULL,
+	perfil VARCHAR(20) NOT NULL
 );
+
+INSERT INTO Usuarios (id, nome, fone, login, senha, perfil) 
+VALUES (1, 'Administrador', '999999999', 'admin', 'admin123', 'Administrador');
+
 
 CREATE TABLE Clientes(
 	id INT PRIMARY KEY AUTO INCREMENT,
@@ -19,14 +24,16 @@ CREATE TABLE Clientes(
 );
 
 CREATE TABLE Os(
-	os INT PRIMARY KEY AUTO INCREMENT,
-	data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	equipamento VARCHAR(150) NOT NULL,
-	defeito VARCHAR(150) NOT NULL,
-	serviço VARCHAR(150),
-	tecnico VARCHAR(30),
-	valor DECIMAL(10,2),
-	idCliente INT NOT NULL,
+	os INT PRIMARY KEY AUTO INCREMENT, 
+	data TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+	equipamento VARCHAR(150) NOT NULL, 
+	defeito VARCHAR(150) NOT NULL,  
+	serviço VARCHAR(150), 
+	tecnico VARCHAR(30), 
+	valor DECIMAL(10,2), 
+	situacao VARCHAR(20) NOT NULL,
+	tipo VARCHAR(15) NOT NULL,
+	idCliente INT NOT NULL, 
 	FOREIGN KEY(idClientes) REFERENCES Clientes(id)
 );
 	
